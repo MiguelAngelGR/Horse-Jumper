@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://c8m2qal1vfhcu"]
+
+[ext_resource type="Script" uid="uid://mxaphpfygg1r" path="res://scripts/Game.gd" id="1_game"]
+[ext_resource type="Script" uid="uid://cko1xkbbkvas6" path="res://scripts/Board.gd" id="2_board"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+bg_color = Color(0.067, 0.067, 0.067, 1)
+border_width_right = 2
+border_color = Color(0.2, 0.2, 0.2, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sep"]
+bg_color = Color(0.25, 0.25, 0.25, 1)
+
+[node name="Game" type="Node2D" unique_id=1444075778]
+script = ExtResource("1_game")
+
+[node name="Board" type="Node2D" parent="." unique_id=944135036]
+script = ExtResource("2_board")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=2007101680]
+
+[node name="SidePanel" type="PanelContainer" parent="UI" unique_id=2071986397]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 200.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panel")
+
+[node name="Margin" type="MarginContainer" parent="UI/SidePanel" unique_id=464779181]
+layout_mode = 2
+theme_override_constants/margin_left = 14
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 14
+theme_override_constants/margin_bottom = 14
+
+[node name="VBox" type="VBoxContainer" parent="UI/SidePanel/Margin" unique_id=814710420]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="UI/SidePanel/Margin/VBox" unique_id=1622375018]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Horse jumper"
+
+[node name="Sep1" type="HSeparator" parent="UI/SidePanel/Margin/VBox" unique_id=1950283615]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_sep")
+
+[node name="LblPar" type="Label" parent="UI/SidePanel/Margin/VBox" unique_id=1958391293]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 16
+
+[node name="LblMoves" type="Label" parent="UI/SidePanel/Margin/VBox" unique_id=1993497700]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+
+[node name="LblStatus" type="Label" parent="UI/SidePanel/Margin/VBox" unique_id=2063204502]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 19
+autowrap_mode = 3
+
+[node name="Sep2" type="HSeparator" parent="UI/SidePanel/Margin/VBox" unique_id=1197034847]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_sep")
+
+[node name="BtnNew" type="Button" parent="UI/SidePanel/Margin/VBox" unique_id=1693527049]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Nueva partida"
+
+[node name="Sep3" type="HSeparator" parent="UI/SidePanel/Margin/VBox" unique_id=127966940]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_sep")
+
+[node name="LblInstructions" type="Label" parent="UI/SidePanel/Margin/VBox" unique_id=1478844062]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.53, 0.53, 0.53, 1)
+theme_override_font_sizes/font_size = 12
+text = "Llega a la meta saltando de casilla en casilla, pisa con cuidado, quizá en paso en falso termine con tu trayeecto"
+autowrap_mode = 3
+
+[node name="Sep4" type="HSeparator" parent="UI/SidePanel/Margin/VBox" unique_id=683361848]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_sep")
+
+[node name="LblCounter" type="Label" parent="UI" unique_id=240760792]
+offset_left = 200.0
+offset_top = 8.0
+offset_right = 1100.0
+offset_bottom = 36.0
+theme_override_colors/font_color = Color(0.13, 0.13, 0.13, 1)
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
